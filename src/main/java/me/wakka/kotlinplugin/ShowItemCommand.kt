@@ -18,11 +18,17 @@ object ShowItemCommand : CommandExecutor {
             return true
         }
 
-        var playerMessage: String = args.joinToString(separator = " ")
+        if(args.isEmpty())
+            return false
+
+        val item: ItemStack = getItem(sender, args[0]) ?: return true
+
+        val argList = args.toMutableList()
+        argList.removeAt(0)
+
+        var playerMessage: String = argList.joinToString(separator = " ")
         if(playerMessage.isNotEmpty())
             playerMessage += " "
-
-        val item: ItemStack = getItem(sender, "hand") ?: return true
 
         var itemName: String? = item.itemMeta.getDisplayName()
 
@@ -54,7 +60,7 @@ object ShowItemCommand : CommandExecutor {
             "pants", "legs", "leggings" -> inv.leggings
             "boots", "feet", "shoes" -> inv.boots
             else -> {
-                player.sendMessage("Unknown slot $slot")
+                player.sendMessage("Unknown slot '$slot'")
                 return null
             }
         }

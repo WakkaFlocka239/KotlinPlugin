@@ -5,5 +5,8 @@ api-version: 1.19
 author: Wakka
 commands:
   showitem:
-    permission: "show.item"
-    description: show item in hand with a message
+    permission: "kp.showitem"
+    description: show item in slot with a message
+  tasktest:
+    permission: "kp.task"
+    description: task test command
