@@ -11,7 +11,7 @@ class KotlinPlugin : JavaPlugin() {
         instance = this
 
         getCommand("showitem")?.setExecutor(ShowItemCommand)
-        getCommand("tasktest")?.setExecutor(TaskCommand)
+        getCommand("task")?.setExecutor(TaskCommand)
     }
 
     override fun onDisable() {

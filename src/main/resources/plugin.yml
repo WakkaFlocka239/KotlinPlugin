@@ -7,6 +7,6 @@ commands:
   showitem:
     permission: "kp.showitem"
     description: show item in slot with a message
-  tasktest:
+  task:
     permission: "kp.task"
-    description: task test command
+    description: testing tasks
