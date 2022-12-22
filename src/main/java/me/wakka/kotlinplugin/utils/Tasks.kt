@@ -1,6 +1,7 @@
-package me.wakka.kotlinplugin
+package me.wakka.kotlinplugin.utils
 
-import me.wakka.kotlinplugin.TimeUtils.TickTime
+import me.wakka.kotlinplugin.KotlinPlugin
+import me.wakka.kotlinplugin.utils.TimeUtils.TickTime
 import org.bukkit.Bukkit
 import org.bukkit.plugin.Plugin
 import org.bukkit.scheduler.BukkitScheduler

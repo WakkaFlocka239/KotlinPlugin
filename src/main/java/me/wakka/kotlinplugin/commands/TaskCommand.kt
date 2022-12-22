@@ -1,6 +1,7 @@
-package me.wakka.kotlinplugin
+package me.wakka.kotlinplugin.commands
 
-import me.wakka.kotlinplugin.TimeUtils.TickTime
+import me.wakka.kotlinplugin.utils.TimeUtils.TickTime
+import me.wakka.kotlinplugin.utils.Tasks
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender

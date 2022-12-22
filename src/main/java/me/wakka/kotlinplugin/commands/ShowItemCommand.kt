@@ -1,6 +1,6 @@
-package me.wakka.kotlinplugin
+package me.wakka.kotlinplugin.commands
 
-import me.wakka.kotlinplugin.StringUtils.camelCase
+import me.wakka.kotlinplugin.utils.StringUtils.camelCase
 import net.kyori.adventure.text.Component
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor

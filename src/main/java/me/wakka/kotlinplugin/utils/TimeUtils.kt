@@ -1,4 +1,4 @@
-package me.wakka.kotlinplugin
+package me.wakka.kotlinplugin.utils
 
 import java.time.Duration
 

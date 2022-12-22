@@ -1,5 +1,7 @@
 package me.wakka.kotlinplugin
 
+import me.wakka.kotlinplugin.commands.ShowItemCommand
+import me.wakka.kotlinplugin.commands.TaskCommand
 import org.bukkit.plugin.Plugin
 import org.bukkit.plugin.java.JavaPlugin
 
