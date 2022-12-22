@@ -77,5 +77,4 @@ class JsonBuilder : ComponentLike {
         return GsonComponentSerializer.gson().serialize(build())
     }
 
-
 }

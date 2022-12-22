@@ -7,7 +7,7 @@ import org.bukkit.Bukkit
 import org.bukkit.OfflinePlayer
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
-import java.util.*
+import java.util.UUID
 
 object PlayerUtils {
     fun send(recipient: Any?, _message: Any?, vararg objects: Any?) {
