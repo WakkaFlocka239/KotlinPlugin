@@ -1,7 +1,7 @@
 package me.wakka.kotlinplugin.commands
 
+import me.wakka.kotlinplugin.utils.JsonBuilder
 import me.wakka.kotlinplugin.utils.StringUtils.camelCase
-import net.kyori.adventure.text.Component
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -35,11 +35,11 @@ object ShowItemCommand : CommandExecutor {
         if(itemName == null || itemName.isEmpty())
             itemName = item.type.name.camelCase()
 
-        val component : Component = Component
-            .text("$playerMessage[$itemName" + count(item.amount) + "]")
-            .hoverEvent(item)
-
-        sender.sendMessage(component)
+        JsonBuilder()
+            .next(playerMessage)
+            .next("&f&l[$itemName&f&l" + count(item.amount) + "]")
+            .hover(item)
+            .send(sender)
 
         return true
     }

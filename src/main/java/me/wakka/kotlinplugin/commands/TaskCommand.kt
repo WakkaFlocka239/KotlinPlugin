@@ -15,8 +15,10 @@ object TaskCommand : CommandExecutor {
             return true
         }
 
+        var count = 0
         val taskId = Tasks.repeat(0, TickTime.SECOND.x(1)) {
-            sender.sendMessage("Repeating Task!")
+            count++
+            sender.sendMessage("Repeating Task! $count")
         }
 
         Tasks.wait(TickTime.SECOND.x(5)) {
