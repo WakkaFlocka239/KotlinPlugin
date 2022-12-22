@@ -1,0 +1,9 @@
+name: KotlinPlugin
+version: '${project.version}'
+main: me.wakka.kotlinplugin.KotlinPlugin
+api-version: 1.19
+author: Wakka
+commands:
+  showitem:
+    permission: "show.item"
+    description: show item in hand with a message
