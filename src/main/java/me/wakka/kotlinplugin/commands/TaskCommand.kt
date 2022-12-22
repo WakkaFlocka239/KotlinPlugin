@@ -1,7 +1,7 @@
 package me.wakka.kotlinplugin.commands
 
-import me.wakka.kotlinplugin.utils.TimeUtils.TickTime
 import me.wakka.kotlinplugin.utils.Tasks
+import me.wakka.kotlinplugin.utils.TimeUtils.TickTime
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -28,7 +28,4 @@ object TaskCommand : CommandExecutor {
 
         return true
     }
-
-
-
 }
