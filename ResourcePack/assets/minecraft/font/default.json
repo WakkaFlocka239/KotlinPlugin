@@ -1,0 +1,31 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "custom/advent_1.png",
+      "ascent": 19,
+      "height": 133,
+      "chars": [
+        "盆"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "custom/advent_2.png",
+      "ascent": 19,
+      "height": 133,
+      "chars": [
+        "鉊"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "custom/space_split.png",
+      "ascent": -32768,
+      "height": -10,
+      "chars": [
+        "ꈉ"
+      ]
+    }
+  ]
+}
