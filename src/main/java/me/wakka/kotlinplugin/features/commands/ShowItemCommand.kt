@@ -34,8 +34,7 @@ object ShowItemCommand : CommandExecutor {
         if(itemName == null || itemName.isEmpty())
             itemName = item.type.name.camelCase()
 
-        JsonBuilder()
-            .next(playerMessage)
+        JsonBuilder(playerMessage)
             .next("&f&l[$itemName&f&l" + count(item.amount) + "]")
             .hover(item)
             .send(sender)

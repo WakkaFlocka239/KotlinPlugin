@@ -22,7 +22,7 @@ object PlayerUtils {
                 message = message.toString()
 
             if (message is String)
-                recipient.sendMessage(JsonBuilder().next(message))
+                recipient.sendMessage(JsonBuilder(message))
             else if (message is ComponentLike)
                 recipient.sendMessage(message)
         }
