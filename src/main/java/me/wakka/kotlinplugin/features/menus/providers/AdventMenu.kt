@@ -1,6 +1,5 @@
 package me.wakka.kotlinplugin.features.menus.providers
 
-import fr.minuskube.inv.SmartInventory
 import fr.minuskube.inv.content.InventoryContents
 import me.wakka.kotlinplugin.features.menus.CustomMenu
 import me.wakka.kotlinplugin.utils.EnumUtils.nextWithLoop
@@ -12,8 +11,7 @@ class AdventMenu(private var frameTicks: Int) : CustomMenu() {
     private var animatedTitle: AnimatedTitle = AnimatedTitle.FRAME_1
 
     override fun open(viewer: Player, page: Int) {
-        val inv: SmartInventory = getInventory(this)
-        inv.open(viewer, page)
+        getInventory(this).open(viewer, page)
     }
 
     override fun getTitle(): String {
@@ -24,26 +22,6 @@ class AdventMenu(private var frameTicks: Int) : CustomMenu() {
         return 6
     }
 
-    // Menu
-
-    override fun update(viewer: Player, contents: InventoryContents) {}
-
-    override fun init(viewer: Player, contents: InventoryContents) {
-//        addCloseItem(contents)
-
-        updateTask(viewer, contents)
-    }
-
-    private fun updateTask(viewer: Player, contents: InventoryContents) {
-        Tasks.wait(frameTicks) {
-            if (!isOpen(viewer, this))
-                return@wait
-
-            this.animatedTitle = animatedTitle.nextWithLoop()
-            open(viewer, contents.pagination().page)
-        }
-    }
-
     enum class AnimatedTitle(private val title: String) {
         FRAME_1("ꈉ盆"),
         FRAME_2("ꈉ鉊"),
@@ -52,8 +30,22 @@ class AdventMenu(private var frameTicks: Int) : CustomMenu() {
         fun getTitle(): String {
             return StringUtils.colorize("&f$title")
         }
-
     }
+
+    override fun update(viewer: Player, contents: InventoryContents) {}
+
+    override fun init(viewer: Player, contents: InventoryContents) {
+        Tasks.wait(frameTicks) {
+            if (!isOpen(viewer, this))
+                return@wait
+
+            this.animatedTitle = animatedTitle.nextWithLoop()
+
+            open(viewer, contents.pagination().page)
+        }
+    }
+
+
 
 
 }
