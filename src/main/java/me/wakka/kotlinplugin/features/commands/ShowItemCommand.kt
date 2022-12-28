@@ -1,4 +1,4 @@
-package me.wakka.kotlinplugin.commands
+package me.wakka.kotlinplugin.features.commands
 
 import me.wakka.kotlinplugin.utils.JsonBuilder
 import me.wakka.kotlinplugin.utils.StringUtils.camelCase
