@@ -35,14 +35,23 @@ object PlayerUtils {
 
         else if (recipient is UUID) {
             send(Bukkit.getPlayer(recipient), message)
-        }
-
-        else if (recipient is Identity) {
+        } else if (recipient is Identity) {
             send(Bukkit.getPlayer(recipient.uuid()), message)
-        }
-
-        else if (recipient is Identified) {
+        } else if (recipient is Identified) {
             send(Bukkit.getPlayer(recipient.identity().uuid()), message)
         }
+    }
+
+    fun runCommand(sender: CommandSender?, commandNoSlash: String?) {
+        if (sender == null) return
+
+        val command = Runnable {
+            Bukkit.dispatchCommand(sender, commandNoSlash!!)
+        }
+
+        if (Bukkit.isPrimaryThread())
+            command.run()
+        else
+            Tasks.sync(command)
     }
 }
