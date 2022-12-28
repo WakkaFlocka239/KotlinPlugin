@@ -3,6 +3,8 @@ version: '${project.version}'
 main: me.wakka.kotlinplugin.KotlinPlugin
 api-version: 1.19
 author: Wakka
+depend:
+  - NBTAPI
 commands:
   showitem:
     permission: "kp.showitem"
@@ -10,3 +12,6 @@ commands:
   task:
     permission: "kp.task"
     description: testing tasks
+  advent:
+    permission: "kp.advent"
+    description: show advent menu
